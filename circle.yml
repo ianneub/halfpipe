@@ -4,9 +4,10 @@ machine:
 
 dependencies:
   override:
-    - docker info
     - cd server && docker build -t ianneub/halfpipe_server .
 
 test:
   override:
-    - echo "test"
+    - docker run -d server -p 80:80 ianneub/halfpipe_server; sleep 5
+    # test ping endpoint
+    - "curl 'http://localhost/v1/ping' | grep 'ok'"
