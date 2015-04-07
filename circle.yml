@@ -1,0 +1,9 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - cd server
+    - docker info
+    - docker build -t ianneub/halfpipe_server .
