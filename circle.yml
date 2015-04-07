@@ -8,6 +8,6 @@ dependencies:
 
 test:
   override:
-    - docker run -d server -p 80:80 ianneub/halfpipe_server; sleep 5
+    - docker run -d -p 80:80 ianneub/halfpipe_server; sleep 5
     # test ping endpoint
     - "curl 'http://localhost/v1/ping' | grep 'ok'"
