@@ -6,3 +6,7 @@ dependencies:
   override:
     - docker info
     - cd server && docker build -t ianneub/halfpipe_server .
+
+test:
+  override:
+    - echo "test"
